@@ -1,23 +1,24 @@
-/* === GLOBAL RESETS === */
+/* ========== GLOBAL RESET ========== */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Includes padding and border in total width/height */
 }
 
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  background-color: white;
   color: #1f2937;
+  background-color: white;
 }
 
-/* === HEADER === */
+/* ========== HEADER SECTION ========== */
 .header {
   background-color: #1f2937;
   color: #f9faf8;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 48px;
+  display: flex; /* Layout logo + nav side by side */
+  justify-content: space-between; /* Push elements to edges */
+  align-items: center; /* Vertically center content */
+  padding: 16px 48px; /* Top/bottom 16px, sides 48px */
+  flex-wrap: nowrap; /* prevent wrapping */
 }
 
 .logo {
@@ -25,23 +26,32 @@ body {
   font-weight: 900;
 }
 
+.nav {
+  display: flex; /* make links stay in a row */
+  gap: 24px;
+  flex-wrap: nowrap; /* keep links in one line */
+}
+
 .nav a {
-  color: #e5e7eb;
-  margin-left: 24px;
-  text-decoration: none;
+  color: #e5e7eb; /* Soft white */
+  text-decoration: none; /* Remove underline */
   font-size: 18px;
 }
 
-/* === HERO SECTION === */
+/* ========== HERO SECTION ========== */
 .hero {
   background-color: #1f2937;
   color: #f9faf8;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px 48px;
-  gap: 40px;
-  flex-wrap: wrap;
+  display: flex; /* Text + image side by side */
+  justify-content: space-between; /* Push left/right */
+  align-items: center; /* Vertically align */
+  padding: 60px 48px; /* Big spacing around content */
+  gap: 40px; /* Space between text and image */
+  flex-wrap: wrap; /* Wrap on small screens */
+}
+
+.hero-text {
+  max-width: 500px;
 }
 
 .hero-text h1 {
@@ -53,76 +63,74 @@ body {
 .hero-text p {
   color: #e5e7eb;
   font-size: 18px;
-  margin-bottom: 16px;
-  max-width: 400px;
+  margin-bottom: 16px; /* Space before button */
 }
 
 .hero-text button {
   background-color: #3882f6;
   color: white;
   border: none;
-  padding: 10px 24px;
+  padding: 10px 24px; /* Button size */
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 16px; /* Normal button text */
   font-weight: 700;
   cursor: pointer;
 }
 
 .hero-image img {
-  width: 400px;
-  max-width: 100%;
-  border-radius: 8px;
+  width: 400px; /* Fixed width */
+  max-width: 100%; /* Shrinks on small screens */
+  border-radius: 8px; /* Soft rounded corners */
 }
 
-/* === INFORMATION SECTION === */
+/* ========== INFORMATION SECTION ========== */
 .info {
-  padding: 60px 48px;
-  text-align: center;
+  padding: 60px 48px; /* Space around content */
+  text-align: center; /* Center title */
 }
 
 .info h2 {
   font-size: 36px;
   font-weight: 900;
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* Space before cards */
 }
 
 .cards {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
+  display: flex; /* Row layout */
+  justify-content: center; /* Center all cards */
+  gap: 32px; /* Space between each card */
+  flex-wrap: wrap; /* Wrap cards on smaller screens */
 }
 
 .card {
   border: 2px solid #3882f6;
   border-radius: 12px;
-  padding: 16px;
-  width: 200px;
-  text-align: center;
+  padding: 16px; /* Inside spacing */
+  width: 200px; /* Card width */
+  text-align: center; /* Center text */
   font-size: 14px;
-  color: #1f2937;
   background-color: white;
-  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease; /* optional for hover effect */
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: transform 0.2s ease; /* Animation on hover */
 }
 
 .card:hover {
-  transform: translateY(-4px); /* subtle lift on hover */
-  cursor: pointer;
+  transform: translateY(-4px); /* Move up slightly */
+  cursor: pointer; /* Pointer on hover */
 }
 
 .card-text {
-  margin-top: 12px;
+  margin-top: 12px; /* Space under image */
 }
 
 .card-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
+  width: 100%; /* Full width of container */
+  height: auto; /* Auto height */
+  border-radius: 10px; /* Rounded image corners */
+  object-fit: cover; /* Crop image nicely */
 }
 
-/* === QUOTE SECTION === */
+/* ========== QUOTE SECTION ========== */
 .quote {
   background-color: #e5e7eb;
   padding: 60px 48px;
@@ -133,19 +141,43 @@ body {
 
 .quote p {
   font-size: 30px;
-  max-width: 800px;
-  margin: auto;
+  max-width: 800px; /* Limit line length */
+  margin: auto; /* Center horizontally */
 }
 
-/* === CTA SECTION === */
+/* ========== CTA SECTION ========== */
 .cta {
   background-color: #3882f6;
   color: white;
   margin: 60px 48px;
   padding: 32px 48px;
   border-radius: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  display: flex; /* Row layout */
+  justify-content: space-between; /* Push text and button apart */
+  align-items: center; /* Center vertically */
+  flex-wrap: wrap; /* Stack on mobile */
+}
+
+.cta h3 {
+  font-size: 24px;
+  margin-bottom: 8px; /* Gap below */
+}
+
+.cta button {
+  background-color: white;
+  color: #3882f6;
+  font-weight: 700;
+  border: none; /* No outline */
+  border-radius: 6px;
+  padding: 10px 24px; /* Button size */
+  cursor: pointer;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background-color: #1f2937;
+  color: #f9faf8;
+  text-align: center; /* Center text */
+  padding: 24px; /* Space inside */
+  font-size: 14px;
 }
